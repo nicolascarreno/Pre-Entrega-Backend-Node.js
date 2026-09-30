@@ -13,3 +13,16 @@ const request = async (url, options = {}) => {
 
   return await response.json();
 };
+
+try {
+  if (method === "GET") {
+    if (id) {
+      const data = await request(`${BASE_URL}/${resource}/${id}`);
+      console.log(data);
+    } 
+  } else {
+    throw new Error(`Unsupported method: ${method}`);
+  }
+} catch (error) {
+  console.log(error.message);
+}
