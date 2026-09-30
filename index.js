@@ -19,7 +19,10 @@ try {
     if (id) {
       const data = await request(`${BASE_URL}/${resource}/${id}`);
       console.log(data);
-    } 
+    } else {
+      const data = await request(`${BASE_URL}/${resource}`);
+      console.log(data);
+    }
   } else {
     throw new Error(`Unsupported method: ${method}`);
   }
