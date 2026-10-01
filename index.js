@@ -23,6 +23,9 @@ try {
       const data = await request(`${BASE_URL}/${resource}`);
       console.log(data);
     }
+  } else if (method === "DELETE") {
+      const data = await request(`${BASE_URL}/${resource}/${id}`, { method: "DELETE" })
+      console.log(data);
   } else {
     throw new Error(`Unsupported method: ${method}`);
   }
