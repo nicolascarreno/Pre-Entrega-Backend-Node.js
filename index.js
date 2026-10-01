@@ -27,8 +27,6 @@ try {
       const [title, ...body] = args;
       const [price , category] = body;
 
-      console.log(body);
-
       if (!title || !body) {
         throw new Error(
           `Title and body are required for POST requests on ${resource}`,
